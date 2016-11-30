@@ -204,7 +204,7 @@ h4, .heading--4 {color: @color__h4--text;}
 
 
 	blockquote {
-		width: 80%;
+		width: 100%;
 		margin: 2em auto;
 		padding: 1em 0;
 		position: relative;
@@ -215,6 +215,7 @@ h4, .heading--4 {color: @color__h4--text;}
 		font-family: @font__h1--font-family;
 		font-size: @font__h4--font-size;
 		line-height: @font__h4--line-height;
+		margin-right: 0;
 
 		@media @tablet {
 			font-size: bkscale(@font__h4--font-size, 0.9);
@@ -235,7 +236,7 @@ h4, .heading--4 {color: @color__h4--text;}
 		// ------------------------------
 
 
-		&:before {
+		&:after {
 			background-color: @color__primary;
 			content: "\f10d";
 			font-family: 'FontAwesome', sans-serif;
@@ -246,7 +247,7 @@ h4, .heading--4 {color: @color__h4--text;}
 			line-height: 2em;
 			text-align: center;
 			display: inline-block;
-			margin-right: 0.75em;
+			margin-left: 0.75em;
 			@media @mobile {
 				width: 2em;
 				height: 2em;
@@ -349,4 +350,30 @@ h4, .heading--4 {color: @color__h4--text;}
 .button--expand {
 	line-height: bkscale(@font__button--font-size, 2);
 	font-size:  bkscale(@font__button--font-size, 0.8);
+}
+
+
+
+
+// Arabic Widget Content UL, LI, OL
+// ---------------------------------
+
+.widget__content {
+ul { direction: rtl; }
+li { direction: rtl; }
+ol {
+    list-style-type: none;
+    list-style: arabic-indic;
+}
+
+blockquote, ol, ul {
+    margin-right: 1.8em;
+    margin-left: 0;
+}
+}
+
+.content ol li:before, .post-body ol li:before {
+    left: inherit!important;
+    margin-left: 20px!important;
+    position: relative!important;
 }

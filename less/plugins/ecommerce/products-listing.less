@@ -24,7 +24,6 @@
 
 
 .ecomproductslist__listing-title {
-    float: left;
 
     // Hide on the Product List Page
 
@@ -84,7 +83,7 @@
 // ------------------------------
 
 
-.ecomproductslist__fieldset--filters .form-body{
+.ecomproductslist__fieldset--filters .form-body {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -95,6 +94,7 @@
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     min-width: 20px;
+    direction: rtl;
 }
 
 
@@ -242,9 +242,9 @@
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex;
-        -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-        flex-direction: row;
+        -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
         -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -268,6 +268,8 @@
         -webkit-flex: 1 1 auto;
         -ms-flex: 1 1 auto;
         flex: 1 1 auto;
+        margin-left: 10px;
+        margin-right: 0;
 
         .input {
             height: 53px;
@@ -352,9 +354,9 @@
     -webkit-flex-wrap: wrap;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    -webkit-justify-content: flex-start;
-    -ms-flex-pack: start;
-    justify-content: flex-start;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
     -webkit-align-content: stretch;
     -ms-flex-line-pack: stretch;
     align-content: stretch;
@@ -418,7 +420,7 @@
 
     .product-item {
         width: 24%;
-        margin: 0 1.33% 20px 0;
+        margin: 0 0 20px 1%;
 
 
         // Last Column Item
