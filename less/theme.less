@@ -1,0 +1,341 @@
+// ------------------------------
+// Protocol Template: CSS > Theme
+// ------------------------------
+
+// 1. #Global Breakpoints
+// 2. #Header
+// 3. #Footer
+// 4. #Main Zone
+// 5. #Typography
+// 6. #Page Titles
+// 7. #Relevant Content Footer
+
+
+
+
+// ------------------------------
+// 1. #Global Break Points
+// ------------------------------
+
+
+
+
+@bp-global-large: 	~"only screen and (min-width : 770px)";
+@bp-global-medium: 	~"only screen and (max-width : 769px)";
+@bp-global-small: 	~"only screen and (max-width : 560px)";
+
+
+@bp-global-columns:   ~"only screen and (min-width : 478px)";
+
+
+
+// ------------------------------
+// 2. #Header
+// ------------------------------
+
+
+
+
+// Template Header
+// ------------------------------
+
+
+.template-header {
+    position: relative;
+    z-index: 1000;
+	background-color: @color__header--background;
+
+    // Container
+
+	.container {
+		// Flexbox - align itemns vertically to the centre
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-flex-direction: row;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+		-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+		-webkit-align-content: flex-start;
+		-ms-flex-line-pack: start;
+		align-content: flex-start;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+        padding: 0 4%;
+
+        @media @feature-medium {
+            padding: 0;
+        }
+
+        @media @bp-global-small {
+            display: block;
+            text-align: center;
+        }
+	}
+}
+
+
+
+
+// Template Navigation
+// ------------------------------
+
+
+.template-navigation {
+    @media @bp-global-large {
+        // Flexbox child: Stretch template-navigation to fill the available space
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+    }
+    @media @bp-global-medium {
+        width: 100%; // Makes template-navigation wrap on separate line
+    }
+}
+
+
+
+
+// ------------------------------
+// 3. #Footer
+// ------------------------------
+
+
+
+// Template Footer
+// ------------------------------
+
+
+.template-footer {
+	.clearfix;
+	background: contrast(@color__footer--background, darken(@color__footer--background, 8%), lighten(@color__footer--background, 8%));
+    text-align: right;
+
+
+    // Container
+    // ------------------------------
+
+
+	.container {
+		.clearfix;
+		margin: 0 auto;
+		padding: 0 13px;
+        max-width: 1500px;
+
+        // Widget
+
+        .widget {
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+            @media @bp-global-small, @bp-global-medium {
+                padding-top: 16px;
+                padding-bottom: 0
+            }
+            @media @mobile {
+                text-align: center;
+            }
+        }
+
+        // Profile Widgets
+        // ------------------------------
+
+		.widget {
+			.clearfix;
+            float: left;
+			width: 32%;
+            margin: 0 2% 0 0;
+            clear: none;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			@media @tablet {
+                width: 29%;
+				margin: 1em;
+			}
+
+			@media @mobile {
+				margin: 0;
+                width: 100%;
+
+                &:last-child {
+                    margin-bottom: 16px;
+                }
+			}
+		}
+	}
+}
+
+// Footer Secondary Widgets
+
+.footer-secondary-widgets {
+    .clearfix;
+	clear: both;
+	background-color: @color__footer--background;
+}
+
+.footer-secondary-widgets .social-list {
+    @media @bp-global-small {
+        text-align: inherit;
+    }
+}
+
+
+
+// ------------------------------
+// 4. #Main Zone
+// ------------------------------
+
+
+
+
+.zone-content {
+	padding: 4%;
+	max-width: 1300px;
+    min-height: 150px;
+	margin: 0 auto;
+    text-align: right;
+}
+
+
+
+
+// -------------------------------
+// 5. #Typography
+// -------------------------------
+
+
+
+
+a {
+	color: @color__link--text;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
+
+
+// ------------------------------
+// 6. #Page Titles
+// ------------------------------
+
+
+
+
+// Title Bar
+// ------------------------------
+
+
+.title-bar {
+	background-color: #ffffff;
+
+	@media @bp-global-small {
+		border-top: 1px solid contrast(@color__secondary, rgba(255, 255, 255, 0.10) , rgba(0, 0, 0, 0.10));
+	}
+}
+
+// Title Container
+// ------------------------------
+
+
+.title-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2% 4%;
+	display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: space-between;
+    -moz-box-pack: space-between;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: sspace-between;
+    justify-content: space-between;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+
+    .default-page & {
+        @media @bp-global-medium {
+            display: none;
+        }
+    }
+
+    @media @bp-global-medium {
+    	display: block;
+    	padding: 8px 13px;
+    }
+
+    @media @bp-global-small {
+
+    }
+
+
+
+
+    // H1
+    // ------------------------------
+
+
+    h1 {
+		-webkit-box-flex: 1;
+		-moz-box-flex: 1;
+		-webkit-flex: 1 1 auto;
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+        padding-bottom: 0;
+		@media @bp-global-medium {
+	    	display: none;
+	    }
+    }
+
+
+
+
+    // Title Widget
+    // ------------------------------
+
+
+    .title-widget {
+    	@media @bp-global-medium {
+	    	float: right;
+	    }
+	    @media @bp-global-small {
+	    	float: none;
+	    }
+    }
+}
+
+
+
+// ------------------------------
+// 7. #Relevant Content Footer
+// ------------------------------
+
+
+
+
+.relevant-content-footer {
+	background: contrast(@color__body--background, darken(@color__body--background, 2%), lighten(@color__body--background, 2%));
+	padding: 36px 0;
+	margin: 4em 0 0 0;
+}

@@ -1,0 +1,26 @@
+<!-- Header -->
+<header class="template-header">
+
+	<div class="container">
+
+		<div class="template-navigation">
+			{{widget('extendednavigation', 'extendednavigation', {"align":"left"})|raw}}
+		</div>
+
+		<div class="drop-down-nav">
+			<div class="page-title">{{widget('pagetitle', 'title', {})|raw}}</div>
+			<button class="custom-navigation-toggle">
+				<div class='bar one'></div>
+				<div class='bar two'></div>
+				<div class='bar three'></div>
+			</button>
+		</div>
+
+		{{widget('companyname', 'companyname', {"business": "profile"})|raw}}
+
+		{{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+
+	</div>
+
+</header>
+<!-- End Header -->

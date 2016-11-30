@@ -1,0 +1,352 @@
+// -----------------------------
+// Protocol Template: CSS > Widgets > Content Widget
+// -----------------------------
+
+
+h1, .heading--1 {color: @color__h1--text;}
+h2, .heading--2 {color: @color__h2--text;}
+h3, .heading--3 {color: @color__h3--text;}
+h4, .heading--4 {color: @color__h4--text;}
+
+
+
+.content, .post-body {
+
+	// H1
+	// ------------------------------
+
+
+	h1 {
+		@media @tablet {
+			font-size: bkscale(@font__h1--font-size, 0.9);
+			line-height: bkscale(@font__h1--line-height, 0.9);
+		}
+
+		@media @mobile {
+			font-size: bkscale(@font__h1--font-size, 0.8);
+			line-height: bkscale(@font__h1--line-height, 0.8);
+		}
+	}
+
+
+
+
+	// H2
+	// ------------------------------
+
+
+	h2 {
+		@media @tablet {
+			font-size: bkscale(@font__h2--font-size, 0.9);
+			line-height: bkscale(@font__h2--line-height, 0.9);
+		}
+
+		@media @mobile {
+			font-size: bkscale(@font__h2--font-size, 0.8);
+			line-height: bkscale(@font__h2--line-height, 0.8);
+		}
+	}
+
+
+
+
+	// H3
+	// ------------------------------
+
+
+	h3 {
+		@media @tablet {
+			font-size: bkscale(@font__h3--font-size, 0.9);
+			line-height: bkscale(@font__h3--line-height, 0.9);
+		}
+
+		@media @mobile {
+			font-size: bkscale(@font__h3--font-size, 0.8);
+			line-height: bkscale(@font__h3--line-height, 0.8);
+		}
+	}
+
+
+
+
+	// H4
+	// ------------------------------
+
+
+	h4 {
+		@media @tablet {
+			font-size: bkscale(@font__h4--font-size, 0.9);
+			line-height: bkscale(@font__h4--line-height, 0.9);
+		}
+
+		@media @mobile {
+			font-size: bkscale(@font__h4--font-size, 0.8);
+			line-height: bkscale(@font__h4--line-height, 0.8);
+		}
+	}
+
+
+
+
+	// Paragraph and Strings
+	// ------------------------------
+
+
+	p, &  {
+		@media @tablet {
+			font-size: bkscale(@font__p--font-size, 0.9);
+			line-height: bkscale(@font__p--line-height, 0.9);
+		}
+
+		@media @mobile {
+			font-size: bkscale(@font__p--font-size, 0.8);
+			line-height: bkscale(@font__p--line-height, 0.8);
+		}
+	}
+
+
+
+
+	// Link
+	// ------------------------------
+
+
+	a {
+		box-shadow: inset 0px -1px 0px 0px @color__link--text;
+		&:hover {
+			text-decoration: none;
+			box-shadow: inset 0px -2px 0px 0px @color__link--text;
+		}
+	}
+
+
+
+
+	// Unordered List
+	// ------------------------------
+
+
+	ul {
+		margin: 0 0 0 1.2em;
+		padding: 0;
+
+		li {
+			padding: 0 0 0 0.5em;
+			margin: 0 0 1em 0;
+
+			@media @tablet {
+				font-size: bkscale(@font__p--font-size, 0.9);
+				line-height: bkscale(@font__p--line-height, 0.9);
+			}
+
+			@media @mobile {
+				font-size: bkscale(@font__p--font-size, 0.8);
+				line-height: bkscale(@font__p--line-height, 0.8);
+				padding-left: 0;
+			}
+		}
+	}
+
+
+
+	// Ordered List
+	// ------------------------------
+
+
+	ol {
+		margin: 1em 0;
+		padding-left: 0;
+		counter-reset: ordered-counter;
+		li {
+			position: relative;
+			padding-left: 3em;
+			margin-bottom: 1em;
+			list-style-type: none;
+
+			@media @tablet {
+				font-size: bkscale(@font__p--font-size, 0.9);
+				line-height: bkscale(@font__p--line-height, 0.9);
+			}
+
+			@media @mobile {
+				font-size: bkscale(@font__p--font-size, 0.8);
+				line-height: bkscale(@font__p--line-height, 0.8);
+				padding-left: 2.5em;
+			}
+
+			// Custom Numbers
+
+			&:before {
+				min-width: 26px;
+				padding: 0 0.4em 0 0;
+				display: inline-block;
+				left: 0;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
+				border-right: 1px solid contrast(@color__secondary, @widget-contrast-light, @widget-contrast-dark);
+				font-family: @font__h1--font-family;
+				content: counter(ordered-counter);
+				counter-increment: ordered-counter;
+				text-align: left;
+			}
+		}
+	}
+
+
+
+
+	// Block Quote
+	// ------------------------------
+
+
+	blockquote {
+		width: 80%;
+		margin: 2em auto;
+		padding: 1em 0;
+		position: relative;
+		display: block;
+		border-width: 1px 0;
+		border-style: solid;
+		border-color: contrast(@color__secondary, @widget-contrast-light, @widget-contrast-dark);
+		font-family: @font__h1--font-family;
+		font-size: @font__h4--font-size;
+		line-height: @font__h4--line-height;
+
+		@media @tablet {
+			font-size: bkscale(@font__h4--font-size, 0.9);
+			line-height: bkscale(@font__h4--line-height, 0.9);
+		}
+
+		@media @mobile {
+			font-size: bkscale(@font__h4--font-size, 0.8);
+			line-height: bkscale(@font__h4--line-height, 0.8);
+			width: auto;
+			padding: 0.8em 0;
+		}
+
+
+
+
+		// Custom Opening Quotation Mark
+		// ------------------------------
+
+
+		&:before {
+			background-color: @color__primary;
+			content: "\f10d";
+			font-family: 'FontAwesome', sans-serif;
+			font-size: 18px;
+			color: contrast(@color__primary, #000, #fff);
+			width: 2em;
+			height: 2em;
+			line-height: 2em;
+			text-align: center;
+			display: inline-block;
+			margin-right: 0.75em;
+			@media @mobile {
+				width: 2em;
+				height: 2em;
+				line-height: 2em;
+				font-size: 14px;
+			}
+		}
+	}
+
+
+
+
+	// Pre
+	// ------------------------------
+
+
+	pre {
+		display: block;
+		margin: 1em 0;
+		padding: 1em;
+		border: none;
+		border-radius: 0;
+		background-color: fade(@color__primary, 80%);
+		color: contrast(@color__primary, #000, #fff);
+		overflow: auto;
+	}
+
+
+
+
+	// Code
+	// ------------------------------
+
+
+	code {
+		font-size: 0.9em;
+		background-color: transparent;
+	}
+
+
+
+
+	// Table
+	// ------------------------------
+
+
+
+	table {
+		overflow: auto;
+		width: 100%;
+
+		@media @tablet {
+			font-size: bkscale(@font__p--font-size, 0.9);
+			line-height: bkscale(@font__p--line-height, 0.9);
+		}
+
+		@media @mobile {
+			font-size: bkscale(@font__p--font-size, 0.8);
+			line-height: bkscale(@font__p--line-height, 0.8);
+		}
+	}
+
+	// Thead
+
+
+	table thead td {
+		background-color: fade(@color__p--text, 10%);
+	}
+
+
+
+
+	// Horizontal Rule
+	// ------------------------------
+
+
+	hr {
+		height: 5px;
+		background-color: contrast(@color__body--background, @widget-contrast-light, @widget-contrast-dark);
+		border: none;
+		margin: 2em 0;
+
+		@media @tablet {
+		    height: 3px;
+		}
+
+		@media @mobile {
+		    height: 1px;
+		}
+	}
+}
+
+
+
+
+// More, Less Button
+// ------------------------------
+
+
+.button--expand {
+	line-height: bkscale(@font__button--font-size, 2);
+	font-size:  bkscale(@font__button--font-size, 0.8);
+}
